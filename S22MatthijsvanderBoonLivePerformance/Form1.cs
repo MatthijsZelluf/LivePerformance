@@ -15,6 +15,17 @@ namespace S22MatthijsvanderBoonLivePerformance
         public Form1()
         {
             InitializeComponent();
+            Database.Database database = new Database.Database();
+
+            if (database.Connect())
+            {
+                MessageBox.Show("Succes");
+                database.Close();
+            }
+            else
+            {
+                MessageBox.Show("Faal");
+            }
         }
     }
 }
