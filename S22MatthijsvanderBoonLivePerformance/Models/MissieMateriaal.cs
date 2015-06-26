@@ -10,7 +10,7 @@ namespace S22MatthijsvanderBoonLivePerformance.Models
     {
          //Fields
         private int _id;
-        private int _hoeveeleheid;
+        private int _hoeveelheid;
         private Missie _missie;
         private Materiaal _materiaal;
 
@@ -23,10 +23,10 @@ namespace S22MatthijsvanderBoonLivePerformance.Models
             set { _id = value; }
         }
 
-        public int Hoeveeleheid
+        public int Hoeveelheid
         {
-            get { return _hoeveeleheid; }
-            set { _hoeveeleheid = value; }
+            get { return _hoeveelheid; }
+            set { _hoeveelheid = value; }
         }
 
         public Missie Missie
@@ -47,7 +47,7 @@ namespace S22MatthijsvanderBoonLivePerformance.Models
         public MissieMateriaal(int id, int hoeveeleheid, Missie missie, Materiaal materiaal)
         {
             _id = id;
-            _hoeveeleheid = hoeveeleheid;
+            _hoeveelheid = hoeveeleheid;
             _missie = missie;
             _materiaal = materiaal;
         }
@@ -60,6 +60,11 @@ namespace S22MatthijsvanderBoonLivePerformance.Models
         public bool Remove(Database.Database database)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return _materiaal.Naam + " " + _hoeveelheid;
         }
     }
 }
